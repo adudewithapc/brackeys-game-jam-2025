@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf60aw4d0uwfe"]
+
+[ext_resource type="Texture2D" uid="uid://kbn8w7h2pep7" path="res://icon.svg" id="1_e1lo2"]
+[ext_resource type="Script" path="res://UI/Item.gd" id="2_adooi"]
+
+[node name="ItemList" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Items" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="Items"]
+layout_mode = 2
+texture_normal = ExtResource("1_e1lo2")
+texture_pressed = ExtResource("1_e1lo2")
+texture_hover = ExtResource("1_e1lo2")
+texture_disabled = ExtResource("1_e1lo2")
+texture_focused = ExtResource("1_e1lo2")
+script = ExtResource("2_adooi")
+
+[connection signal="pressed" from="Items/TextureButton" to="Items/TextureButton" method="_on_pressed"]
